@@ -114,7 +114,7 @@ body {
 .share-icon-container {
   z-index: 1;
   cursor: pointer;
-  background-color: $dark-grey;
+  background-color: #EEF4FB;
   @include center-by-flex;
 }
 
@@ -125,7 +125,7 @@ body {
 }
 
 #share-icon {
-  fill: white;
+  fill: $dark-grey;
   height: 14px;
 }
 
@@ -144,6 +144,12 @@ body {
   }
 }
 
+.click{
+  background-color: $dark-grey !important;
+  svg{
+  fill:white !important;
+  }
+}
 
 @media (max-width: $moblie-width) {
   .card {
@@ -167,13 +173,7 @@ body {
   .card-bottom {
     align-items: flex-end;
   }
-  .share-icon-container {
-    background-color: #EEF4FB;
-  }
-  #share-icon{
-      fill: $dark-grey;
-  }
-  
+
   .click{
     background-color:#6E7F96 !important;
     svg{

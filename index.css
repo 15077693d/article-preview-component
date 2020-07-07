@@ -100,7 +100,7 @@ body {
 .share-icon-container {
   z-index: 1;
   cursor: pointer;
-  background-color: #49556b;
+  background-color: #EEF4FB;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -113,7 +113,7 @@ body {
 }
 
 #share-icon {
-  fill: white;
+  fill: #49556b;
   height: 14px;
 }
 
@@ -130,6 +130,13 @@ body {
 .card-bottom-left p {
   padding-top: 2px;
   font-size: 13px;
+}
+
+.click {
+  background-color: #49556b !important;
+}
+.click svg {
+  fill: white !important;
 }
 
 @media (max-width: 500px) {
@@ -153,14 +160,6 @@ body {
 
   .card-bottom {
     align-items: flex-end;
-  }
-
-  .share-icon-container {
-    background-color: #EEF4FB;
-  }
-
-  #share-icon {
-    fill: #49556b;
   }
 
   .click {
