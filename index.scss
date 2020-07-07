@@ -1,0 +1,238 @@
+@import url("https://fonts.googleapis.com/css2?family=Manrope:wght@500;700&display=swap");
+/* variable */
+$dark-grey: #49556b;
+$light-grey: #b5bbc6;
+$extra-light-grey: #e6ecf3;
+$border-radius: 9px;
+$moblie-width: 500px;
+
+/* mixin */
+@mixin center-by-flex {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+@mixin even-by-flex {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+/* General */
+* {
+  color: $light-grey;
+  font-family: "Manrope";
+  font-weight: 500;
+  margin: 0px;
+  padding: 0px;
+  font-size: 12px;
+}
+
+h1 {
+  color: $dark-grey;
+  font-size: 20px;
+  font-weight: 700;
+}
+
+body {
+  background-color: $extra-light-grey;
+  height: 100vh;
+  @include center-by-flex;
+}
+
+@media (max-width: $moblie-width) {
+  h1 {
+    color: $dark-grey;
+    font-size: 15px;
+    font-weight: 700;
+  }
+}
+
+/* section */
+#article-preview {
+  display: flex;
+  height: 280px;
+  width: 750px;
+}
+
+@media (max-width: $moblie-width) {
+  #article-preview {
+    display: flex;
+    flex-direction: column;
+    height: 500px;
+    width: 300px;
+  }
+}
+
+/* left */
+.article-img {
+  flex-shrink: 0;
+  height: 100%;
+  width: 39%;
+  background-image: url("./images/drawers.jpg");
+  background-repeat: no-repeat;
+  background-position: 10% 100%;
+  background-size: cover;
+  border-top-left-radius: $border-radius;
+  border-bottom-left-radius: $border-radius;
+}
+
+@media (max-width: $moblie-width) {
+  .article-img {
+    flex-shrink: 0;
+    height: 40%;
+    width: 100%;
+    background-position: 0% 20%;
+    border-top-right-radius: $border-radius;
+    border-bottom-left-radius: 0;
+  }
+}
+
+/* right */
+.card {
+  width: 65%;
+  border-bottom-right-radius: $border-radius;
+  border-top-right-radius: $border-radius;
+  background-color: white;
+  display: flex;
+  @include center-by-flex;
+}
+
+.card-container {
+  position: relative;
+  height: 75%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  width: 370px;
+}
+
+.card-bottom {
+  @include even-by-flex;
+}
+
+.share-icon-container {
+  z-index: 1;
+  cursor: pointer;
+  background-color: $dark-grey;
+  @include center-by-flex;
+}
+
+.icon {
+  border-radius: 50%;
+  height: 34px;
+  width: 34px;
+}
+
+#share-icon {
+  fill: white;
+  height: 14px;
+}
+
+.card-bottom-left {
+  display: flex;
+  div {
+    position: relative;
+    left: 10px;
+  }
+  h1 {
+    font-size: 13px;
+  }
+  p {
+    padding-top: 2px;
+    font-size: 13px;
+  }
+}
+
+
+@media (max-width: $moblie-width) {
+  .card {
+    width: 100%;
+    height: 250px;
+    border-bottom-right-radius: $border-radius;
+    border-bottom-left-radius: $border-radius;
+    border-top-right-radius: 0;
+    align-items: flex-end;
+  }
+
+  .card-container {
+    position: relative;
+    height: 90%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    width: 80%;
+  }
+
+  .card-bottom {
+    align-items: flex-end;
+  }
+  .share-icon-container {
+    background-color: #EEF4FB;
+  }
+  #share-icon{
+      fill: $dark-grey;
+  }
+  
+  .click{
+    background-color:#6E7F96 !important;
+    svg{
+    fill:#FDFEFF !important;
+    }
+  }
+}
+
+/* pop up */
+#pop-up {
+  height: 55px;
+  position: absolute;
+  width: 210px;
+  left: 249px;
+  top: 90px;
+  @include center-by-flex;
+  border-radius: $border-radius;
+  background-color: $dark-grey;
+  div {
+    @include even-by-flex;
+    width: 75%;
+  }
+  span {
+    font-size: 13px;
+    font-weight: 700 !important;
+    display: inline;
+    letter-spacing: 3px;
+  }
+  &::after {
+    position: absolute;
+    top: 50px;
+    content: "";
+    border: 15px green solid;
+    border-top-color: $dark-grey;
+    border-bottom-color: transparent;
+    border-left-color: transparent;
+    border-right-color: transparent;
+  }
+  img {
+    cursor: pointer;
+  }
+}
+
+@media (max-width: $moblie-width) {
+  #pop-up {
+    z-index: 1;
+    border-top-left-radius: 0px;
+    width: 90%;
+    top: 170px;
+    left: -30px;
+    &::after {
+        left: 200px;
+        top:0px;
+        background-color: $dark-grey;
+        border: 0px;
+        width: 100px;
+        height: 55px;
+        border-bottom-right-radius: $border-radius;
+        border-top-right-radius: 0px;
+    }
+  }
+}
